@@ -9911,8 +9911,8 @@ h3 {
 }
 @font-face {
   font-family: "Gilroy";
-  src: url("../../src/assets/fonts/Gilroy-Regular.eot");
-  src: local("Gilroy Regular"), local("Gilroy-Regular"), url("../../src/assets/fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"), url("../../src/assets/fonts/Gilroy-Regular.woff2") format("woff2"), url("../../src/assets/fonts/Gilroy-Regular.woff") format("woff"), url("../../src/assets/fonts/Gilroy-Regular.ttf") format("truetype");
+  src: url("../src/assets/fonts/Gilroy-Regular.eot");
+  src: local("Gilroy Regular"), local("Gilroy-Regular"), url("../src/assets/fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"), url("../src/assets/fonts/Gilroy-Regular.woff2") format("woff2"), url("../src/assets/fonts/Gilroy-Regular.woff") format("woff"), url("../src/assets/fonts/Gilroy-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -9970,7 +9970,7 @@ body {
   position: relative;
 }
 .search-bar::before {
-  content: url("../../src/assets/img/icons/search.svg");
+  content: url("../src/assets/img/icons/search.svg");
   position: absolute;
   width: 24px;
   height: 24px;
@@ -10180,7 +10180,7 @@ body {
 .mountain {
   height: 738px;
   background-size: contain;
-  background: url("../../src/assets/img/mountain.jpg") no-repeat center;
+  background: url("../src/assets/img/mountain.jpg") no-repeat center;
 }
 
 .advantages {
@@ -10434,7 +10434,7 @@ body {
   left: 50%;
   width: 38%;
   height: 594px;
-  background: url("../../src/assets/img/photographer.jpg") no-repeat 25% 75%;
+  background: url("../src/assets/img/photographer.jpg") no-repeat 25% 75%;
   background-size: cover;
 }
 
