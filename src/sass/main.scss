@@ -1,0 +1,1034 @@
+//Include bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+//Globals:
+//--colors
+$primary1: #496ADC;
+$primary2: #FAD192;
+$secondary: #FFF8EE;
+$black: #000;
+$black60: rgba(0, 0, 0, 0.6);
+$black40: rgba(0, 0, 0, 0.4);
+$black20: rgba(0, 0, 0, 0.2);
+$black08: rgba(0, 0, 0, 0.08);
+$white: #fff;
+$white60: rgba(255, 255, 255, 0.6);
+//--shadows
+$shadow-light: 0 2px 16px rgba(0, 0, 0, 0.08);
+$shadow-heavy: 0 4px 64px rgba(0, 0, 0, 0.2);
+
+//Mixins:
+//--typography
+@mixin font-title1 {
+  font-family: Gilroy, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 110%;
+}
+
+@mixin font-title2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin font-subtitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: $black60
+}
+
+@mixin font-body {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: $black60;
+}
+
+@mixin font-caption {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: $black40;
+}
+
+//--border
+@mixin light-border {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+//--buttons
+@mixin btn-primary {
+  background: $primary1;
+  color: $white;
+  padding: 20px 28px;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+}
+
+@mixin tab-primary {
+  border: none;
+  border-bottom: 2px solid $primary1;
+  padding: 30px 28px 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  background: transparent;
+}
+
+//--inputs
+@mixin input {
+  border: 2px solid $black20;
+  padding: 28px 28px 8px;
+  outline: $secondary;
+  width: 410px;
+  border-radius: 8px;
+  &:focus {
+    border: 2px solid $primary1;
+  }
+}
+@mixin input-group {
+  border: 1px solid $black20;
+  border-radius: 4px;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  display: block;
+  color: $black;
+  height: 45px;
+  &:focus {
+    border: 1px solid $primary1;
+    outline: transparent;
+    box-shadow: none;
+  }
+  &:active {
+    outline: transparent;
+    box-shadow: none;
+  }
+}
+
+//Fonts
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../../src/assets/fonts/Gilroy-Regular.eot');
+  src: local('Gilroy Regular'), local('Gilroy-Regular'),
+  url('../../src/assets/fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../../src/assets/fonts/Gilroy-Regular.woff2') format('woff2'),
+  url('../../src/assets/fonts/Gilroy-Regular.woff') format('woff'),
+  url('../../src/assets/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Body
+body {
+  font-family: Gilroy, sans-serif;
+}
+
+//Header
+.header {
+  padding: 45px 2px 34px;
+}
+
+.header__row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.logo {
+  padding-left: 0;
+}
+
+.main-nav__block {
+  padding: 0;
+  margin: 0;
+
+  .main-nav__block__item {
+    list-style-type: none;
+    margin-left: 24px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    a {
+      @include font-body;
+      text-decoration: none;
+    }
+  }
+}
+
+.search-bar {
+  padding-right: 0;
+
+  .search-bar__button {
+    padding: 0 0 0 30px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    @include font-body;
+    color: $primary1;
+    position: relative;
+  }
+
+  &::before {
+    content: url("../../src/assets/img/icons/search.svg");
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    display: block;
+    top: 4px;
+    left: 13px;
+  }
+}
+
+//Main:
+//--main title section
+.main-title {
+  margin-top: 80px;
+
+  .main-title__title {
+    @include font-title1;
+  }
+
+  .main-title__subtitle {
+    @include font-subtitle;
+    margin-top: 18px;
+  }
+}
+
+//--buttons
+.main-title__buttons {
+  margin-top: 23px;
+}
+
+.button-primary,
+.button-secondary {
+  @include btn-primary
+}
+
+.button-secondary {
+  background: $white;
+  color: $primary1;
+  box-shadow: $shadow-light;
+  margin-left: 16px;
+}
+
+//--group images section
+.group-images {
+  margin-top: 89px;
+
+  .group-images__image {
+    margin: 0 auto;
+  }
+}
+
+//--how it works section
+.how-it-works {
+  padding: 120px 0;
+  background: $secondary;
+}
+
+.how-it-works__title {
+  @include font-title1;
+}
+
+.tab-primary,
+.tab-secondary {
+  @include tab-primary;
+  @include font-body;
+  color: $primary1;
+  width: 233px;
+}
+
+.tab-secondary {
+  color: $black40;
+  border-bottom: 2px solid $black20;
+}
+
+.conditions {
+  margin-top: 80px;
+}
+
+.conditions__container__title {
+  @include font-title2
+}
+
+.conditions__container__description {
+  @include font-caption
+}
+
+.video-preview {
+  margin-top: 65px;
+
+  img {
+    width: 100%;
+    border-radius: 24px;
+  }
+}
+
+//--reviews section
+.reviews {
+  padding: 120px 0 98px;
+}
+
+.reviews__block {
+  width: 345px;
+  margin-left: 5px;
+  &:nth-child(3) {
+    margin-right: -5px;
+  }
+}
+
+.reviews__review {
+  border-radius: 16px;
+}
+
+.reviews__title {
+  @include font-title1;
+  margin-left: -20px;
+}
+
+.reviews__description {
+  @include font-subtitle;
+  margin-top: 16px;
+  margin-left: -20px;
+}
+
+.reviews__row {
+  margin-top: 65px;
+}
+
+.reviews__review {
+  @include font-subtitle;
+  color: $black;
+  line-height: 30px;
+  box-shadow: $shadow-light;
+  padding: 30px 35px;
+}
+
+.reviews__author {
+  padding: 19px 32px;
+}
+
+.reviews__author__avatar {
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 16px;
+
+  img {
+    width: 48px;
+  }
+}
+
+.reviews__author__data {
+  h6 {
+    @include font-caption;
+    font-weight: 600;
+    color: $black;
+  }
+
+  span {
+    font-weight: 500;
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    color: $black60;
+    margin-top: -5px;
+  }
+}
+
+//--mountain-photo section
+.mountain {
+  height: 738px;
+  background-size: contain;
+  background: url("../../src/assets/img/mountain.jpg") no-repeat center;
+}
+
+//--advantages section
+.advantages {
+  padding: 120px 0;
+  background: $primary1;
+}
+
+.advantages__row {
+  margin-top: 58px;
+}
+
+.advantages__title {
+  @include font-title1;
+  color: $white;
+}
+
+.advantages__item {
+  position: relative;
+  z-index: 5;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.advantages__item__title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.defended {
+  background: $white;
+  margin-right: 16px;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.quickly {
+  background: $primary2;
+  margin-left: 16px;
+
+  img {
+    position: absolute;
+    right: 0;
+  }
+
+  .advantages__item__image1 {
+    top: 0;
+  }
+
+  .advantages__item__image2 {
+    bottom: 0;
+  }
+}
+
+.advantages__item__title {
+  width: 290px;
+  padding: 32px 0 0 20px;
+}
+
+.advantages__item__description {
+  display: block;
+  margin: 84px 0 0 18px;
+  @include font-body;
+  font-weight: 600;
+  color: $primary1;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+//--our photographers section
+.our-photographers {
+  padding: 120px 0;
+}
+
+.our-photographers__title {
+  @include font-title1;
+}
+
+.our-photographers__row {
+  position: relative;
+}
+
+.our-photographers__left-button,
+.our-photographers__right-button {
+  display: block;
+  height: 64px;
+  width: 64px;
+  top: 207px;
+  box-shadow: $shadow-light;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  background: $white;
+  z-index: 10;
+}
+
+.our-photographers__left-button {
+  left: -17px;
+  display: none;
+
+  img {
+    transform: rotateY(180deg);
+  }
+}
+
+.our-photographers__right-button {
+  right: -17px;
+}
+
+.our-photographers__person {
+  width: 358px;
+  height: 364px;
+  margin-top: 57px;
+  position: relative;
+  box-shadow: $shadow-light;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.our-photographers__person__icon {
+  position: absolute;
+  top: 176px;
+  left: 32px;
+}
+
+.our-photographers__person__name {
+  @include font-title2;
+  margin: 32px 0 0 32px;
+}
+
+.our-photographers__person__count {
+  @include font-body;
+  margin: 4px 0 0 32px;
+}
+
+//--form section
+.form-section {
+  background: $secondary;
+  width: 100%;
+  position: relative;
+  height: 594px;
+}
+
+.form-section__wrapper {
+  padding: 120px 0;
+}
+
+.form-section__title {
+  @include font-title1
+}
+
+.form-section__form {
+  margin-top: 33px;
+}
+
+.form-section__form__label {
+  position: relative;
+}
+
+.form-section__form__placeholder {
+  position: absolute;
+  display: block;
+  @include font-caption;
+  font-weight: 600;
+  width: 200px;
+  height: 20px;
+  top: 20px;
+  left: 30px;
+}
+
+.form-section__form__mail {
+  @include input;
+  @include font-body;
+  font-weight: 600;
+  color: $black;
+  &:focus + .form-section__form__placeholder {
+    top: 5px;
+    font-size: 13px;
+  }
+}
+
+.form-section__form__submit {
+  @include btn-primary;
+  width: 410px;
+  margin-top: 16px;
+}
+
+.form-section__personal {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black60;
+  width: 410px;
+  margin-top: 24px;
+
+  a {
+    color: $primary1;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.form-section__background {
+  position: absolute;
+  left: 50%;
+  width: 38%;
+  height: 594px;
+  background: url("../../src/assets/img/photographer.jpg") no-repeat 25% 75%;
+  background-size: cover;
+}
+
+//--questions & answers
+.questions-and-answers {
+  padding: 120px 0;
+}
+
+.questions-and-answers__title {
+  @include font-title1;
+  letter-spacing: 0.01em;
+}
+
+.questions-and-answers__block {
+  box-shadow: $shadow-light;
+  width: 750px;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  margin-top: 42px;
+}
+
+.questions-and-answers__block__item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.questions-and-answers__item__question {
+  @include font-title2;
+  line-height: 28px;
+  margin: 26px 32px 11px;
+  width: 80%;
+  letter-spacing: 0.01em;
+}
+
+.questions-and-answers__item__answer {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: $black60;
+  margin: 0 32px 26px;
+  width: 80%;
+  letter-spacing: 0.01em;
+}
+
+.questions-and-answers__toggle {
+  background: transparent;
+  border: none;
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: -5px;
+  right: 24px;
+  padding: 0;
+
+}
+
+//--Footer
+.footer {
+  padding: 120px 0;
+}
+
+.footer__copyrights {
+  @include font-caption;
+  margin-left: 4px;
+}
+
+.footer__faq {
+  margin-left: 90px;
+  margin-right: 95px;
+}
+
+.footer__faq__item {
+  margin-bottom: 15px;
+}
+
+.footer__faq,
+.footer__social-networks {
+  ul {
+    padding: 0;
+  }
+}
+
+.footer__contacts {
+  @include font-body;
+  font-weight: 600;
+  color: $primary1;
+}
+
+.footer__faq__item,
+.footer__social-networks__item {
+  list-style-type: none;
+
+  a {
+    @include font-body;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.footer__social-networks {
+  margin-top: 14px;
+}
+
+.footer__social-networks__item {
+  margin-right: 15px;
+}
+
+//--Right block section
+.right-block {
+  height: 900px;
+  width: 400px;
+  padding: 56px 32px 188px;
+  font-family: Arial, sans-serif;
+  box-shadow: $shadow-heavy;
+  margin: 40px auto;
+  p {
+    font-size: 13px;
+    line-height: 16px;
+    color: #8D99A7;
+    margin: 0;
+  }
+}
+.right-block__name,
+.right-block__block_height,
+.right-block__margin_top,
+.right-block__margin_bottom,
+.right-block__header_background,
+.right-block__size-buttons,
+.right-block__submit {
+  margin-bottom: 24px;
+}
+.right-block__name p,
+.right-block__block_height p,
+.right-block__margin_top p,
+.right-block__margin_bottom p {
+  margin-bottom: -18px;
+}
+.right-block__header_background p,
+.right-block__size-buttons p,
+.right-block__size-input p,
+.right-block__type p {
+  margin-bottom: 7px;
+}
+//--name
+.right-block__name {
+  margin-top: -20px;
+}
+#right-block__name {
+  @include input_group;
+  width: 336px;
+}
+//--height
+#right-block__block_height,
+#right-block__margin_bottom,
+#right-block__margin_top {
+  @include input-group;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+#right-block__block-height__button,
+#right-block__margins__button1,
+#right-block__margins__button2 {
+  @include input-group;
+  width: 60px;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  &:before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 20px;
+    display: block;
+    background: rgba(0, 0, 0, 0.25);
+    left: 0;
+    top: 12px;
+    z-index: 10;
+  }
+  &:focus {
+    border-left: none;
+  }
+}
+//--margins
+.right-block__margin_top,
+.right-block__margin_bottom {
+  width: 50%;
+}
+.right-block__margin_bottom {
+  margin-left: 8px;
+}
+.right-block__margin_top {
+  margin-right: 8px;
+}
+.right-block__margin_top__menu,
+.right-block__margin_bottom__menu {
+  min-width: 60px;
+  border: none;
+  box-shadow: $shadow-light;
+}
+.right-block__menu__active {
+  color: $primary1;
+}
+.right-block__margin_top__menu a,
+.right-block__margin_bottom__menu a{
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+}
+//--header background
+.right-block__header_background__range {
+  margin-top: -34px;
+}
+#right-block__header_background1,
+#right-block__header_background2, {
+  @include input_group;
+  width: 168px;
+}
+#right-block__header_background1 {
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+#right-block__header_background2 {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+  text-align: right;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 304px; /* Specific width is required for Firefox. */
+  margin: 0 auto;
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 304px;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  border: 2px solid $white;
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: $black;
+  cursor: pointer;
+  margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  border: 3px solid $white;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: $black;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  border: 3px solid $white;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: $black;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 304px;
+  height: 2px;
+  cursor: pointer;
+  background: linear-gradient(0.25turn, $white, $black);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+
+input[type=range]::-moz-range-track {
+  width: 304px;
+  height: 2px;
+  cursor: pointer;
+  background: linear-gradient(0.25turn, $white, $black);
+}
+
+input[type=range]::-ms-track {
+  width: 304px;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+input[type=range]::-ms-fill-upper {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+//--size buttons
+.right-block__size-buttons__item {
+  @include input-group;
+  background: white;
+  color: #8D99A7;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-right: none;
+  border-left: none;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 20px;
+    display: block;
+    background: rgba(0, 0, 0, 0.25);
+    right: 0;
+    top: 12px;
+    z-index: 10;
+  }
+}
+.right-block__size-buttons__item:first-child {
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  &:active {
+    border-left: 1px solid $primary1;
+  }
+  &:focus {
+    border-left: 1px solid $primary1;
+  }
+}
+.right-block__size-buttons__item:last-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  &:active {
+    border-right: 1px solid $primary1;
+  }
+  &:after {
+    display: none;
+  }
+  &:focus {
+    border-right: 1px solid $primary1;
+  }
+}
+.right-block__size-buttons__active {
+  color: $black;
+}
+//--size input
+.right-block__size-input__settings,
+.right-block__size-input__multiply {
+  background: #F0F2F6;
+  border-left: none;
+  border-right: none;
+  padding: 6px 10px;
+}
+.right-block__size-input__multiply {
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  padding-right: 14px;
+}
+.right-block__size-input__item {
+  @include input-group;
+  border-right: none;
+  background: #F0F2F6;
+}
+.right-block__size-input {
+  margin-bottom: 12px;
+}
+//--button
+.right-block__submit {
+  @include input-group;
+  background: $white;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #293ACC;
+}
+//--type dropdown
+#dropdownMenu2 {
+  @include input-group;
+  width: 100%;
+  background-color: $white;
+  color: $black;
+  text-align: left;
+  position: relative;
+  &:after {
+    position: absolute;
+    right: 14px;
+    top: 22px;
+    display: block;
+  }
+  &:active {
+    background: $white;
+    color: $white;
+    border-color: $primary1;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+.right-block__type__menu {
+  width: 100%;
+  top: 5px;
+  position: relative;
+  border: none;
+  box-shadow: $shadow-light;
+}
+.type__menu__item {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #0A083A;
+  position: relative;
+  &:after {
+    content: url("../../src/assets/img/icons/done.svg");
+    display: none;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 4px;
+    right: 10px;
+    &:hover {
+      background-color: #F0F2F6;
+    }
+  }
+}
+.type__menu__active:after {
+  display: block;
+}
+.type__menu__link {
+  color: #8D99A7;
+}
